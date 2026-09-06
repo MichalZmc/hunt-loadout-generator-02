@@ -154,7 +154,6 @@ const weaponsByPoints = {
 
 const IMAGE_FOLDER = "images/";
 
-// Elementy DOM
 const quartermasterToggle = document.getElementById("quartermaster-toggle");
 const slotsMaxDisplay = document.getElementById("slots-max");
 const generateBtn = document.getElementById("generate-btn");
@@ -168,21 +167,19 @@ function getWeaponImagePath(weaponName) {
     return `${IMAGE_FOLDER}${formattedName}.webp`;
 }
 
-// Obsługa Custom Dropdown
 function setupCustomDropdown(dropdownEl) {
     const trigger = dropdownEl.querySelector(".dropdown-trigger");
     const options = dropdownEl.querySelectorAll(".dropdown-option");
 
     trigger.addEventListener("click", (e) => {
         e.stopPropagation();
-        // Zamknij inne otwarte dropdowny
         document.querySelectorAll(".custom-dropdown").forEach(dd => {
             if (dd !== dropdownEl) dd.classList.remove("open");
         });
         dropdownEl.classList.toggle("open");
     });
 
-    options.addEventListener ? null : null; // Safety check
+    options.addEventListener ? null : null;
 
     options.forEach(option => {
         option.addEventListener("click", (e) => {
@@ -201,13 +198,11 @@ function setupCustomDropdown(dropdownEl) {
     });
 }
 
-// Pobieranie wybranej wartości
 function getDropdownValue(dropdownEl) {
     const selected = dropdownEl.querySelector(".dropdown-option.selected");
     return selected ? selected.dataset.value : "auto";
 }
 
-// Ustawianie wartości z poziomu kodu
 function setDropdownValue(dropdownEl, val) {
     const options = dropdownEl.querySelectorAll(".dropdown-option");
     options.forEach(opt => {
@@ -219,12 +214,10 @@ function setDropdownValue(dropdownEl, val) {
     });
 }
 
-// Zamykanie menu po kliknięciu poza nie
 document.addEventListener("click", () => {
     document.querySelectorAll(".custom-dropdown").forEach(dd => dd.classList.remove("open"));
 });
 
-// Aktualizacja blokowania opcji na podstawie limitu punktów
 function updateSelectOptions() {
     const maxSlots = quartermasterToggle.checked ? 6 : 5;
     slotsMaxDisplay.textContent = maxSlots;
@@ -232,7 +225,6 @@ function updateSelectOptions() {
     const val1 = getDropdownValue(ddWeapon1);
     const val2 = getDropdownValue(ddWeapon2);
 
-    // Opcje dla broni 2 na podstawie broni 1
     const pts1 = val1 === "auto" ? 0 : parseInt(val1);
     const maxAllowedForW2 = maxSlots - pts1;
 
@@ -250,7 +242,6 @@ function updateSelectOptions() {
         setDropdownValue(ddWeapon2, "auto");
     }
 
-    // Opcje dla broni 1 na podstawie broni 2
     const pts2 = val2 === "auto" ? 0 : parseInt(val2);
     const maxAllowedForW1 = maxSlots - pts2;
 
@@ -356,12 +347,10 @@ function updateWeaponUI(slotNumber, weapon) {
     };
 }
 
-// Inicjalizacja komponentów
 setupCustomDropdown(ddWeapon1);
 setupCustomDropdown(ddWeapon2);
 
 quartermasterToggle.addEventListener("change", updateSelectOptions);
 generateBtn.addEventListener("click", generateLoadout);
 
-// Pierwsza aktywacja limitów
 updateSelectOptions();

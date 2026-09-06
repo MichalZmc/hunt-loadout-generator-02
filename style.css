@@ -29,7 +29,6 @@
 body {
     font-family: 'Inter', sans-serif;
     background-color: var(--bg-color);
-    /* Ustawienie obrazu tła z ciemnym nakładem gradientowym */
     background-image: linear-gradient(rgba(12, 13, 18, 0.75), rgba(12, 13, 18, 0.85)), url("background.webp");
     background-size: cover;
     background-position: center;
@@ -44,7 +43,6 @@ body {
     overflow-x: hidden;
 }
 
-/* Poświata tła (dostosowana przezroczystość dla zachowania klimatu) */
 .background-overlay {
     position: fixed;
     top: -40%;
@@ -87,7 +85,6 @@ body {
     margin-top: -5px;
 }
 
-/* Opcje i Wybór Ustawień - dodano z-index, by menu wychodziło ponad bronie */
 .options-card {
     background: var(--card-bg);
     border: 1px solid var(--card-border);
@@ -115,7 +112,6 @@ body {
     background: var(--card-border);
 }
 
-/* Toggle Switch */
 .toggle-container {
     display: flex;
     align-items: center;
@@ -175,7 +171,6 @@ body {
     font-weight: 800;
 }
 
-/* Sekcja wyboru kwadratów */
 .mix-selector-section {
     display: flex;
     flex-direction: column;
@@ -217,7 +212,6 @@ body {
     font-weight: 700;
 }
 
-/* --- CUSTOM DROPDOWN --- */
 .custom-dropdown {
     position: relative;
     user-select: none;
@@ -259,7 +253,6 @@ body {
     color: var(--accent-red);
 }
 
-/* Lista rozwijana z wysokim z-index */
 .dropdown-menu {
     position: absolute;
     top: calc(100% + 6px);
@@ -280,7 +273,6 @@ body {
     display: flex;
 }
 
-/* Opcje w menu */
 .dropdown-option {
     padding: 10px 12px;
     font-size: 0.85rem;
@@ -307,7 +299,6 @@ body {
     pointer-events: none;
 }
 
-/* Badge łącznikowy */
 .plus-sign {
     font-size: 0.75rem;
     font-weight: 900;
@@ -324,7 +315,6 @@ body {
     margin: 0 auto;
 }
 
-/* Karty Broni */
 .loadout-display {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -431,7 +421,6 @@ body {
     color: var(--gold);
 }
 
-/* Przycisk i podsumowanie */
 .action-section {
     display: flex;
     flex-direction: column;
