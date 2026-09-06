@@ -101,7 +101,6 @@ const weaponsByPoints = {
         { name: "Sparks Silencer", price: 150 },
         { name: "Sparks Sniper", price: 150 },
         { name: "Maynard Sniper", price: 139 },
-        { name: "Maynard Sniper Silencer", price: 159 },
         { name: "Centennial", price: 157 },
         { name: "Centennial Sniper", price: 181 },
         { name: "Centennial Trauma", price: 167 },
@@ -148,6 +147,7 @@ const weaponsByPoints = {
     5: [
         { name: "Mosin-Nagant Avtomat", price: 1250 },
         { name: "Auto-5", price: 600 },
+        { name: "Maynard Sniper Silencer", price: 159 },
         { name: "Nitro Express", price: 1015 }
     ]
 };
