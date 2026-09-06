@@ -21,7 +21,7 @@ const weaponsByPoints = {
         { name: "Scottfield Swift", price: 95 },
         { name: "Sparks Pistol", price: 155 },
         { name: "Sparks Pistol Silencer", price: 178 },
-        { name: "Hand Crossbow", price: 30 },
+        { name: "Hand Crossbow", price: 30 }
     ],
     2: [
         { name: "Bornheim No. 3 Match", price: 180 },
@@ -54,7 +54,8 @@ const weaponsByPoints = {
         { name: "Dolch 96 Claw", price: 700 },
         { name: "Dolch 96 Bullseye", price: 725 },
         { name: "Chu Ko Nu", price: 75 },
-        { name: "Flame Rifle", price: 0 },
+        { name: "Haymaker", price: 279 },
+        { name: "Flame Rifle", price: 0 }
     ],
     3: [
         { name: "Frontier 73C", price: 41 },
@@ -84,7 +85,7 @@ const weaponsByPoints = {
         { name: "Auto-4 Shorty", price: 300 },
         { name: "Bomb Lance", price: 199 },
         { name: "Dolch 96 Precision", price: 730 },
-        { name: "Hunting Bow", price: 57 },
+        { name: "Hunting Bow", price: 57 }
     ],
     4: [
         { name: "Infantry 73L", price: 78 },
@@ -121,6 +122,10 @@ const weaponsByPoints = {
         { name: "Krag Bayonet", price: 460 },
         { name: "Krag Sniper", price: 517 },
         { name: "Krag Silencer", price: 517 },
+        { name: "Lebel 1886", price: 397 },
+        { name: "Lebel 1886 Aperture", price: 417 },
+        { name: "Lebel 1886 Talon", price: 407 },
+        { name: "Lebel 1886 Marksman", price: 437 },
         { name: "Mosin-Nagant", price: 620 },
         { name: "Mosin-Nagant Bayonet", price: 630 },
         { name: "Mosin-Nagant Sniper", price: 713 },
@@ -138,11 +143,12 @@ const weaponsByPoints = {
         { name: "Crossbow Deadeye", price: 53 },
         { name: "Homestead 78", price: 0 },
         { name: "Shredder", price: 0 },
+        { name: "Wildland", price: 0 }
     ],
     5: [
         { name: "Mosin-Nagant Avtomat", price: 1250 },
         { name: "Auto-5", price: 600 },
-        { name: "Nitro Express", price: 1015 },
+        { name: "Nitro Express", price: 1015 }
     ]
 };
 
