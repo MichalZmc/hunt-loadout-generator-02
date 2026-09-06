@@ -10,6 +10,16 @@
     --gold: #e2b13c;
 }
 
+::selection {
+  background: var(--accent-red);
+  color: var(--bg-color);
+}
+
+::-moz-selection {
+  background: var(--accent-red);
+  color: var(--bg-color);
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
