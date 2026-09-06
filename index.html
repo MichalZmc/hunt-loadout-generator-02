@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hunt Loadout Generator 2.0</title>
+    <link rel="icon" type="image/jpeg" href="logo.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="background-overlay"></div>
+
+    <main class="container">
+        <header class="header">
+            <h1 class="title">HUNT: SHOWDOWN 1896</h1>
+            <p class="subtitle">LOADOUT GENERATOR</p>
+        </header>
+
+        <!-- Pasek Opcji / Switch Kwatermistrz & Wybór kombinacji -->
+        <section class="options-card">
+            <div class="options-top">
+                <label class="toggle-container">
+                    <input type="checkbox" id="quartermaster-toggle">
+                    <span class="toggle-slider"></span>
+                    <span class="toggle-label">Umiejętność: <strong>Kwatermistrz (Quartermaster)</strong></span>
+                </label>
+                <div class="slots-info">
+                    Limit punktów: <span id="slots-max">5</span> kwadratów
+                </div>
+            </div>
+
+            <hr class="divider">
+
+            <div class="mix-selector-section">
+                <span class="selector-label">Wybór układu kwadratów:</span>
+                <div class="select-group">
+                    
+                    <!-- Broń 1 Dropdown -->
+                    <div class="select-wrapper">
+                        <label>Broń 1</label>
+                        <div class="custom-dropdown" id="dd-weapon1">
+                            <div class="dropdown-trigger">
+                                <span class="selected-text">3 Kwadraty [■■■]</span>
+                                <span class="arrow">▼</span>
+                            </div>
+                            <div class="dropdown-menu">
+                                <div class="dropdown-option" data-value="auto">Losowo</div>
+                                <div class="dropdown-option" data-value="1">1 Kwadrat [■]</div>
+                                <div class="dropdown-option" data-value="2">2 Kwadraty [■■]</div>
+                                <div class="dropdown-option selected" data-value="3">3 Kwadraty [■■■]</div>
+                                <div class="dropdown-option" data-value="4">4 Kwadraty [■■■■]</div>
+                                <div class="dropdown-option" data-value="5">5 Kwadratów [■■■■■]</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <span class="plus-sign">+</span>
+
+                    <!-- Broń 2 Dropdown -->
+                    <div class="select-wrapper">
+                        <label>Broń 2</label>
+                        <div class="custom-dropdown" id="dd-weapon2">
+                            <div class="dropdown-trigger">
+                                <span class="selected-text">2 Kwadraty [■■]</span>
+                                <span class="arrow">▼</span>
+                            </div>
+                            <div class="dropdown-menu">
+                                <div class="dropdown-option" data-value="auto">Losowo</div>
+                                <div class="dropdown-option" data-value="1">1 Kwadrat [■]</div>
+                                <div class="dropdown-option selected" data-value="2">2 Kwadraty [■■]</div>
+                                <div class="dropdown-option" data-value="3">3 Kwadraty [■■■]</div>
+                                <div class="dropdown-option" data-value="4">4 Kwadraty [■■■■]</div>
+                                <div class="dropdown-option" data-value="5">5 Kwadratów [■■■■■]</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Wyświetlanie Wylosowanego Loadoutu -->
+        <section class="loadout-display">
+            <!-- Broń 1 -->
+            <div class="weapon-card" id="card-weapon1">
+                <div class="card-header">
+                    <span class="slot-title">Broń Główna</span>
+                    <span class="slots-badge" id="badge-weapon1">-</span>
+                </div>
+                <div class="image-wrapper">
+                    <img id="img-weapon1" src="" alt="Wygląd broni" class="weapon-img hidden">
+                    <div class="placeholder-text" id="ph-weapon1">Brak broni</div>
+                </div>
+                <div class="weapon-info">
+                    <h3 id="name-weapon1" class="weapon-name">Nazwa Broni</h3>
+                    <p class="weapon-price" id="price-weapon1">-</p>
+                </div>
+            </div>
+
+            <!-- Broń 2 -->
+            <div class="weapon-card" id="card-weapon2">
+                <div class="card-header">
+                    <span class="slot-title">Broń Dodatkowa</span>
+                    <span class="slots-badge" id="badge-weapon2">-</span>
+                </div>
+                <div class="image-wrapper">
+                    <img id="img-weapon2" src="" alt="Wygląd broni" class="weapon-img hidden">
+                    <div class="placeholder-text" id="ph-weapon2">Brak broni</div>
+                </div>
+                <div class="weapon-info">
+                    <h3 id="name-weapon2" class="weapon-name">Nazwa Broni</h3>
+                    <p class="weapon-price" id="price-weapon2">-</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Podsumowanie ceny i Przycisk -->
+        <section class="action-section">
+            <div class="total-price-box">
+                Suma: <span id="total-price">$0</span>
+            </div>
+            <button id="generate-btn" class="btn-primary">
+                <span>LOSUJ LOADOUT</span>
+            </button>
+        </section>
+    </main>
+
+    <a id="msln-sign" target="_blank" class="flex items-center gap-1 group">
+      <span class="default-text" data-pl="stworzone przez" data-en="created by">stworzone przez</span>
+      <span class="old">@msln</span>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>
